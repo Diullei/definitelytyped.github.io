@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="The repository for high quality TypeScript type definitions" />
+	<meta name="keywords" content="typescript, type, definition, declaration, repository, typing" />
+	<meta name="generator" content="DocPad v6.78.6" />
+
+	<title>Contribution guide | DefinitelyTyped</title>
+
+	<style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/assets/styles/main.css" />
+	<link rel="shortcut icon" href="/favicon.ico" >
+
+	<![if lte IE 9]><script src="/assets/scripts/lib/html5shiv-min.js"></script><![endif]>
+	<![if lte IE 8]><script src="/assets/scripts/lib/respond-min.js"></script><![endif]>
+</head>
+<body>
+
+<header class="dt-header">
+    <div class="container">
+        
+
+<nav>
+	<a class="dt-header-logo" href="/"><span>Definitely<strong>Typed</strong></span></a>
+	<button class="menu-widget open">Menu</button>
+
+	<div class="dt-header-menu">
+		<div class="menu-header visible-xs">
+			<a class="dt-header-logo" href="/"><span>Definitely<strong>Typed</strong></span></a>
+			<button class="menu-widget close">Close</button>
+		</div>
+
+		<ul>
+			
+				<li class="parent guides">
+					<a href="/guides/contributing.html">Guides</a>
+					
+	<ul>
+		
+			<li>
+				<a href="/guides/best-practices.html">Best practices</a>
+				
+			</li>
+		
+			<li class="current">
+				<a href="/guides/contributing.html">Contribution guide</a>
+				
+			</li>
+		
+			<li>
+				<a href="/guides/creating.html">Creating a definition file</a>
+				
+			</li>
+		
+			<li>
+				<a href="/guides/pull-request.html">Pull Requests</a>
+				
+			</li>
+		
+	</ul>
+
+				</li>
+			
+				<li class=" directory">
+					<a href="/directory/learn.html">Directory</a>
+					
+	<ul>
+		
+			<li>
+				<a href="/directory/discuss.html">Discuss</a>
+				
+			</li>
+		
+			<li>
+				<a href="/directory/learn.html">Learn TypeScript</a>
+				
+			</li>
+		
+			<li>
+				<a href="/directory/libraries.html">Libraries</a>
+				
+			</li>
+		
+			<li>
+				<a href="/directory/projects.html">Projects</a>
+				
+			</li>
+		
+			<li>
+				<a href="/directory/tools.html">Tools &amp; Editors</a>
+				
+			</li>
+		
+	</ul>
+
+				</li>
+			
+				<li class=" pages">
+					<a href="/pages/badges.html">Pages</a>
+					
+	<ul>
+		
+			<li>
+				<a href="/pages/website-contributions.html">Website contributions</a>
+				
+			</li>
+		
+			<li>
+				<a href="/pages/badges.html">Badges</a>
+				
+			</li>
+		
+			<li>
+				<a href="/pages/language-issues.html">Language issues</a>
+				
+			</li>
+		
+	</ul>
+
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+
+    </div>
+</header>
+
+<div class="accent">
+	<div class="container">
+		<div class="row dt-breadcrumb-row">
+			<div class="col-md-12 typography">
+				
+
+<ol class="dt-breadcrumb">
+	<li><a href="/index.html">Homepage</a></li>
+	
+	
+		
+			<li><a href="/guides/contributing.html">Guides</a></li>
+			
+	
+		
+	
+		
+	
+		
+	
+		
+	
+
+		
+	
+		
+	
+		
+	
+
+</ol>
+
+				<h1>Contribution guide</h1>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row sticky-wrap">
+		<div class="col-md-3 sticky-container hidden-xs">
+			
+
+<nav class="dt-menu">
+	
+    <ul>
+        
+            <li>
+				<a href="/guides/best-practices.html">Best practices</a>
+				
+            </li>
+        
+            <li class="current">
+				<a href="/guides/contributing.html">Contribution guide</a>
+				
+            </li>
+        
+            <li>
+				<a href="/guides/creating.html">Creating a definition file</a>
+				
+            </li>
+        
+            <li>
+				<a href="/guides/pull-request.html">Pull Requests</a>
+				
+            </li>
+        
+    </ul>
+
+</nav>
+
+		</div>
+		<div class="col-md-9 typography">
+			<div class="ui small message">
+    This guide covers contributing <strong>definitions</strong>. For information on contributing to the <strong>website</strong> go the <a href="/pages/website-contributions.html">website update guide</a>.
+</div>
+
+
+<h2 id="quality-criteria">Quality Criteria</h2>
+<p>To ensure the quality of <code>DefinitelyTyped</code> repository, the typings must meet the following criteria:</p>
+<h2 id="naming-the-file">Naming the file</h2>
+<p>Try to use a simple lowercase identifier as name of the definition file, like <code>library.d.ts</code> or <code>node-hoge.d.ts</code>. To keep naming conflicts to a minimum please use the package name as used in the <a href="https://www.npmjs.org/">npm</a> package registry. The only exception here should be NuGet / Windows oriented code as they use a camel-case convention.</p>
+<p>If the library is published to multiple package managers (npm, bower, yam, NuGet, component etc) but under different names then also use the npm name.</p>
+<p>If the library is not published on npm use a new identifier, as long as it doesn&#39;t shadow an existing npm name.</p>
+<h3 id="version">Version</h3>
+<p>In case there are multiple versions supported, the latest one will be without a version number in the file name. Older versions will be in the form of <code>library-1.2.0.d.ts</code> where the postfix should resemble a valid <a href="http://semver.org/">semantic version</a> number (semver).</p>
+<h3 id="location">Location</h3>
+<p>The typing must be placed in a folder. The folder name must be similar to library name.</p>
+<p>Example: <code>qunit.d.ts</code> in in a folder named <code>qunit</code></p>
+<p>In general the definition should be a single <code>.d.ts</code> file, but exceptions can be made for large libraries (~ &gt;1000 LOC).</p>
+<h2 id="content">Content</h2>
+<h3 id="header">Header</h3>
+<p>The typing must have a header with the following format:</p>
+<pre><code>/<span class="hljs-regexp">/ Type definitions for [LIBRARY NAME]
+/</span><span class="hljs-regexp">/ Project: [LIBRARY URL]
+/</span><span class="hljs-regexp">/ Definitions by: [AUTHOR NAME] &lt;[AUTHOR URL]&gt;
+/</span><span class="hljs-regexp">/ Definitions: https:/</span><span class="hljs-regexp">/github.com/</span><span class="hljs-constant">DefinitelyTyped</span>/<span class="hljs-constant">DefinitelyTyped</span>
+</code></pre><p>If the version of the library is known then add it as a semver to the label.</p>
+<pre><code>/<span class="hljs-regexp">/ Type definitions for Backbone v0.9.10
+/</span><span class="hljs-regexp">/ Project: http:/</span><span class="hljs-regexp">/backbonejs.org/</span>
+/<span class="hljs-regexp">/ Definitions by: Boris Yankov &lt;https:/</span><span class="hljs-regexp">/github.com/borisyankov</span><span class="hljs-regexp">/&gt;
+/</span><span class="hljs-regexp">/ Definitions: https:/</span><span class="hljs-regexp">/github.com/</span><span class="hljs-constant">DefinitelyTyped</span>/<span class="hljs-constant">DefinitelyTyped</span>
+</code></pre><h3 id="namespacing">Namespacing</h3>
+<ul>
+<li>Be careful to use a module to avoid conflicts to your internal interfaces and the interfaces from another typings. See <a href="/guides/best-practices.html">best practices</a> and <a href="https://typescript.codeplex.com/wikipage?title=Writing%20Definition%20%28.d.ts%29%20Files">the TypeScript wiki</a> for some tips.</li>
+</ul>
+<blockquote>
+<p>The <a href="%-@site.github%&gt;/blob/master/jquery.bbq/jquery.bbq.d.ts"><code>jQuery.bbq</code> typing</a> has the interfaces in a module named <code>JQueryBbq</code></p>
+</blockquote>
+<p>Example:</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">module</span> JQueryBbq {
+    <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">JQuery</span> {</span>
+        <span class="hljs-comment">//...</span>
+    }
+    <span class="hljs-comment">//...</span>
+}
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">JQueryStatic</span> {</span>
+    bbq: JQueryBbq.JQuery;
+    <span class="hljs-comment">//...</span>
+}
+</code></pre>
+<p>See the <a href="/guides/best-practices.html">best practices</a> for more info on how to structure a definition file.</p>
+<h3 id="documentation">Documentation</h3>
+<p>Take advantage of TypeScript <a href="http://blogs.msdn.com/b/typescript/archive/2013/01/21/announcing-typescript-0-8-2.aspx">JSDoc support</a>.</p>
+<h2 id="tests">Tests</h2>
+<p>The typing must have tests in a files called <code>library-tests.ts</code>. The tests are not runnable in the TDD way but contain code that should compile with no errors, usually taken from the documentation samples of the library.</p>
+<p>Example: <code>backbone.d.ts</code> has a test file named <code>backbone-tests.ts</code>, with this <a href="%- @site.github %&gt;/blob/master/backbone/backbone-tests.ts">example of a real test file</a>.</p>
+<p>There are a few ways to test changes:</p>
+<ol>
+<li>Simply compile the test file:<ul>
+<li><code>tsc --noImplicitAny your/code-tests.ts</code></li>
+<li><code>tsc --noImplicitAny --module commonjs your/code-tests.ts</code></li>
+</ul>
+</li>
+<li>Run <code>npm test</code> before sending your pull request.<ul>
+<li>If you created new files add them to git so the tester picks them as changes.</li>
+<li>Tests must be run from the DefinitelyTyped project&#39;s root directory.</li>
+<li>You&#39;ll need to run <code>npm update</code> once to download the packages required by the test suite.</li>
+</ul>
+</li>
+<li>Enable Travis on your DT fork and test online.<ul>
+<li>See note below on how to enable this.</li>
+<li>This takes a few steps to do but is faster for big cascading changes (like changing JQuery)</li>
+</ul>
+</li>
+<li>Depend on the automated test on Travis that runs after you send a PR.<ul>
+<li>If you need many attempts to fix errors then please flatten the history and clean the commit message.</li>
+</ul>
+</li>
+</ol>
+<p>You can use a <code>tscparams</code> file to specify custom compiler arguments e.g. <a href="%-@site.github%&gt;/blob/master/atom/atom-tests.ts.tscparams">atom/atom-tests.ts.tscparams</a></p>
+<p>Note: By default <code>npm test</code> only runs tests for the changed / new definition files. To run all tests just execute <code>npm run all</code>.</p>
+<h2 id="code-style">Code style</h2>
+<ul>
+<li>At this point we do not enforce a specific <em>general</em> code style, but we do like idiomatic code in each <em>individual</em> file.</li>
+<li>When creating a new definition file the author is free to choose either tabs or 4-space indentation (<a href="https://github.com/DefinitelyTyped/DefinitelyTyped/issues/1709">discussion</a> on github).</li>
+<li>Choice between Unix or Windows linebreaks is not enforced, as node.js doesn&#39;t care for it either way. Try to keep it idiomatic per file.</li>
+<li>When editing an existing file please maintain the existing style as much as possible, this includes indenting, separator whitespace, bracing etc..</li>
+<li>Do not use fancy code alignments or smart-tabs; instead keep things plain and simple.</li>
+<li>It is discouraged to reformat existing code (as it breaks git attribution).</li>
+<li>When preparing a Pull Request please check git diff (locally or on github) for unnecessary changes.</li>
+<li>Regard the typing folder in your project as external resource and exclude it from your linter/formatter workflow, just like any library file.</li>
+</ul>
+<h2 id="private-apis">Private APIs</h2>
+<p>We do not support exposing <em>undocumented</em> internal implementation details of libraries in <code>.d.ts</code> files. We follow this more strictly for <em>popular</em> libraries with good documentation e.g. jquery, angular, node etc.</p>
+<h2 id="contributors-link">Contributors link</h2>
+<p><a href="%-@site.github%&gt;/blob/master/CONTRIBUTORS.md">CONTRIBUTORS.md</a> will update automatically.</p>
+<h3 id="note">Note</h3>
+<p>Keep in mind the repos is a community project with a wide range on quality in contributions and moderation; so there may be the occasional rule violation or historical artifact.</p>
+
+			<aside>
+    <hr />
+    <a href="https://github.com/DefinitelyTyped/definitelytyped.github.io/edit/source/src/documents/guides/contributing.html.md">Edit this page</a>
+    or read more in our
+	<a href="/pages/website-contributions.html">contribution guide</a>.
+</aside>
+		</div>
+	</div>
+</div>
+
+<footer class="dt-footer">
+    <div class="container">
+        <div class="row">
+			
+				<div class="col-md-3 col-sm-6">
+					<h2 class="guides">Guides</h2>
+					
+						<ul>
+							
+								<li><a href="/guides/best-practices.html">Best practices</a></li>
+							
+								<li><a href="/guides/contributing.html">Contribution guide</a></li>
+							
+								<li><a href="/guides/creating.html">Creating a definition file</a></li>
+							
+								<li><a href="/guides/pull-request.html">Pull Requests</a></li>
+							
+						</ul>
+					
+				</div>
+			
+				<div class="col-md-3 col-sm-6">
+					<h2 class="directory">Directory</h2>
+					
+						<ul>
+							
+								<li><a href="/directory/discuss.html">Discuss</a></li>
+							
+								<li><a href="/directory/learn.html">Learn TypeScript</a></li>
+							
+								<li><a href="/directory/libraries.html">Libraries</a></li>
+							
+								<li><a href="/directory/projects.html">Projects</a></li>
+							
+								<li><a href="/directory/tools.html">Tools &amp; Editors</a></li>
+							
+						</ul>
+					
+				</div>
+			
+				<div class="col-md-3 col-sm-6">
+					<h2 class="pages">Pages</h2>
+					
+						<ul>
+							
+								<li><a href="/pages/website-contributions.html">Website contributions</a></li>
+							
+								<li><a href="/pages/badges.html">Badges</a></li>
+							
+								<li><a href="/pages/language-issues.html">Language issues</a></li>
+							
+						</ul>
+					
+				</div>
+			
+
+            <div class="col-md-3 col-sm-6">
+                <ul class="quick">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://github.com/DefinitelyTyped/DefinitelyTyped">GitHub</a></li>
+                    <li><a href="http://www.nuget.org/packages?q=DefinitelyTyped">NuGet</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<footer class="dt-love">
+    <div class="container">
+        <p class="icons">DefinitelyTyped, an independent project about TypeScript.</p>
+    </div>
+</footer>
+
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script><script defer="defer"  src="/assets/scripts/lib/underscore-min.js"></script><script defer="defer"  src="/assets/scripts/lib/backbone-min.js"></script><script defer="defer"  src="/assets/scripts/lib/backbone.nativeview.js"></script><script defer="defer"  src="/assets/scripts/lib/fontfaceonload.js"></script><script defer="defer"  src="/assets/scripts/main.js"></script>
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-47495295-3', 'definitelytyped.org');
+	ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

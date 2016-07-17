@@ -1,5 +1,0 @@
-<header class="dt-header">
-    <div class="container">
-        <%- @partial('header_nav') %>
-    </div>
-</header>
