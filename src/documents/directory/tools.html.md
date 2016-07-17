@@ -1,12 +1,10 @@
 ---
 layout: 'content'
 title: 'Tools & Editors'
-menuOrder: 1
 ---
 
 ## General
 
-* [TSD](https://github.com/Diullei/tsd) Definitions package manager
 * [TypeLITE](http://type.litesolutions.net/) Generate TypeScript interfaces from .NET classes
 
 
@@ -44,3 +42,4 @@ menuOrder: 1
 * [typescript-vim](https://github.com/leafgarland/typescript-vim)
 * [sublime-typescript](https://github.com/raph-amiard/sublime-typescript)
 * [typescript-tools](https://github.com/clausreinke/typescript-tools) CLI access to TypeScript language services; Vim plugin
+* [atom-typescript](https://atom.io/packages/atom-typescript) TypeScript support for Atom editor

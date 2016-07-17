@@ -1,7 +1,6 @@
 ---
 layout: 'content'
 title: 'Best practices'
-menuOrder: 3
 ---
 
 This is a guide to the best practices to follow when creating typing files.  There are a variety of different ways that typing files can be constructed.  Different approaches can be used - this is intended as a guide to what approaches make sense in certain scenarios.

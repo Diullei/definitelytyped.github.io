@@ -1,7 +1,6 @@
 ---
 layout: 'content'
 title: 'Discuss'
-menuOrder: 2
 ---
 
 TypeScript on:
@@ -12,4 +11,3 @@ TypeScript on:
 * [Twitter](https://twitter.com/search?q=%23typescript)
 * [Reddit](http://www.reddit.com/r/typescriptt)
 * [Freenode IRC](irc://irc.freenode.net/#typescript)
-

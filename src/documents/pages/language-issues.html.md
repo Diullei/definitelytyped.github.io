@@ -1,7 +1,6 @@
 ---
 layout: 'content'
 title: 'Language issues'
-menuOrder: 2
 ---
 
 There are a few problems in TypeScript that limit the expressiveness of the type declarations. This page tracks the known issues that we submitted or found on the TypeScript [codeplex bugtracker](https://typescript.codeplex.com/workitem/list/basic).
@@ -61,3 +60,5 @@ If you know of a typing related issue not linked here please leave and issue in 
 ### [2451](https://typescript.codeplex.com/workitem/2451)
 
 > Allow operators to work on custom types (via valueOf)
+
+<%- @partial('contribute') %>

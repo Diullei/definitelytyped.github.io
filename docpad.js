@@ -5,12 +5,12 @@ var docpadConfig = {
 	templateData: {
 		site: {
 			url: 'http://definitelytyped.org',
-			github: 'https://github.com/borisyankov/DefinitelyTyped',
+			github: 'https://github.com/DefinitelyTyped/DefinitelyTyped',
             edit: 'https://github.com/DefinitelyTyped/definitelytyped.github.io/edit/source/src/documents/',
-			ref: 'github.com/borisyankov/DefinitelyTyped',
+			ref: 'github.com/DefinitelyTyped/DefinitelyTyped',
 			home: '/',
 			gh: {
-				user: 'borisyankov',
+				user: 'DefinitelyTyped',
 				repo: 'DefinitelyTyped'
 			},
 			oldUrls: [],
@@ -35,12 +35,6 @@ var docpadConfig = {
 				label: 'TypeScript definitions on DefinitelyTyped',
 				svg_base: '//definitelytyped.org/badges/standard.svg',
 				svg_flat: '//definitelytyped.org/badges/standard-flat.svg'
-			}
-		},
-		link: {
-			tsd: {
-				web: 'http://definitelytyped.org/tsd/',
-				npm: 'https://www.npmjs.org/package/tsd'
 			}
 		},
 		getPreparedTitle: function() {

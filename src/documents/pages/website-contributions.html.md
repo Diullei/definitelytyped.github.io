@@ -1,7 +1,6 @@
 ---
 layout: 'content'
 title: 'Website contributions'
-menuOrder: 1
 ---
 
 The content of this website is open for updates by users.

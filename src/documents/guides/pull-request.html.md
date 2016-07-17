@@ -1,7 +1,6 @@
 ---
 layout: 'content'
 title: 'Pull Requests'
-menuOrder: 2
 ---
 
 ## Getting latest upstream changes

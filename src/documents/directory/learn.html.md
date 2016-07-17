@@ -1,7 +1,6 @@
 ---
 layout: 'content'
 title: 'Learn TypeScript'
-menuOrder: 0
 ---
 
 ## Resources

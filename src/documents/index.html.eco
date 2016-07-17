@@ -94,7 +94,7 @@ section: 'home'
                 <p>
                     Found an error? Head over to the issue tracker on GitHub and let us know what's going wrong.
                 </p>
-                <p><a href="https://github.com/borisyankov/DefinitelyTyped/issues" class="action">Issue tracker</a></p>
+                <p><a href="https://github.com/DefinitelyTyped/DefinitelyTyped/issues" class="action">Issue tracker</a></p>
             </div>
             <div class="col-md-4 typography centered">
                 <h3 class="label">Create a pull request</h3>

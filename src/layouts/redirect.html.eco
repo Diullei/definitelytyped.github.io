@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="<%= @getPreparedDescription() %>" />
 	<meta name="keywords" content="<%= @getPreparedKeywords() %>" />
-	<meta http-equiv="refresh" content="0; url=<%= @document.redirectTarget %>" />
+	<meta http-equiv="refresh" content="0; url=<%= @document.menuRedirect %>" />
 
 	<%- @getBlock('meta').toHTML() %>
 

@@ -18,7 +18,6 @@
                 <ul class="quick">
                     <li><a href="/">Home</a></li>
                     <li><a href="<%= @site.github %>">GitHub</a></li>
-                    <li><a href="/tsd/">TSD</a></li>
                     <li><a href="http://www.nuget.org/packages?q=DefinitelyTyped">NuGet</a></li>
                 </ul>
             </div>
